@@ -81,6 +81,16 @@ Pull requests are welcome! Please open an issue first to discuss major changes.
 
 ***
 
+## TODOs:
+
+- Add support for loading CSVs:
+    - activities.csv will provide the most verbose activity type, name, and description. Needs to be integrated with the activity file loader in order to beef up the activities table
+    - profile.csv provides user-specific information, such as athlete id, user description, city, and state.
+    - followers.csv and following.csv shows which user is following who, organized by athlete id (see point above). A single table mapping follower to followee can be created from this information
+    - global_challenges.csv and group_challenges.csv can be combined into one table and mapped to the user who participated in them.
+
+***
+
 ## License
 
 MIT License.
