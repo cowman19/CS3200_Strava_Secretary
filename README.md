@@ -9,8 +9,8 @@ This project provides a pipeline to **import bulk Strava activity exports** into
 ## Features
 
 *   **Bulk Import**: Handles Strava ZIP exports containing multiple activity files.
-*   **Data Parsing**: Supports `.fit`, `.gpx`, and `.tcx` formats.
-*   **Relational Schema**: Normalized MySQL schema for activities, laps, segments, and metrics.
+*   **Data Parsing**: Supports `.fit` and `.gpx` formats.
+*   **Relational Schema**: Normalized MySQL schema for activities, segments, and metrics.
 
 ***
 
@@ -18,12 +18,6 @@ This project provides a pipeline to **import bulk Strava activity exports** into
 
 *   **Python**: 3.10+
 *   **MySQL**: 8.0+
-*   **Dependencies**:
-    *   `mysql-connector-python`
-    *   `pandas`
-    *   `fitparse` (for `.fit` files)
-    *   `gpxpy` (for `.gpx` files)
-    *   `lxml` (for `.tcx` files)
 
 Install dependencies:
 
@@ -55,13 +49,8 @@ pip install -r requirements.txt
 ## Usage
 
 1.  **Place your Strava export ZIPs** in the `data/` folder.
-2.  **Run through the cells in the notebooks, starting with Step1**:
+2.  **Run through the cells in the Jupyter Notebooks, starting with Step1**:
 3.  **Verify data in MySQL**:
-
-
-***
-
-## Database Schema
 
 
 ***
@@ -69,25 +58,15 @@ pip install -r requirements.txt
 ## Roadmap
 
 *   ✅ Initial bulk import
-*   ✅ Support for `.fit`, `.gpx`, `.tcx`
-*   ⬜ Add support for incremental updates
-*   ⬜ Visualization dashboard (e.g., Grafana)
+*   ✅ Support for `.fit`, `.gpx`
+*   ⬜ Add support for incremental updates and `.tcx`
+*   ⬜ Visualization dashboard
 
 ***
 
 ## Contributing
 
 Pull requests are welcome! Please open an issue first to discuss major changes.
-
-***
-
-## TODOs:
-
-- Add support for loading CSVs:
-    - activities.csv will provide the most verbose activity type, name, and description. Needs to be integrated with the activity file loader in order to beef up the activities table
-    - profile.csv provides user-specific information, such as athlete id, user description, city, and state.
-    - followers.csv and following.csv shows which user is following who, organized by athlete id (see point above). A single table mapping follower to followee can be created from this information
-    - global_challenges.csv and group_challenges.csv can be combined into one table and mapped to the user who participated in them.
 
 ***
 

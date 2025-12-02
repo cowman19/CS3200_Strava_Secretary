@@ -2,3 +2,7 @@ jupyter
 pandas
 fitdecode
 gpxpy
+numpy
+matplotlib
+dotenv
+mysql.connector
